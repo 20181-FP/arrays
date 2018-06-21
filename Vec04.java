@@ -4,7 +4,26 @@ public class Vec04{ //CRUD
 		reader(h);
 		h=add("Angel", h);
 		reader(h);
+		//
+		int pos =find("Juan", h);
+		if(pos>=0)
+			System.out.println("pos="+pos);
+		else
+			System.out.println("No existe");
+		edit("Juan","Juan Gabriel", h);
+		reader(h);
 	}
+	
+	public static int find(String b, String v[]){
+			for (int i=0;i<v.length;i++ ) {
+				if (b.equals( v[i]) ){	
+					return i;
+				}
+			}
+			return -1;
+		
+	}
+
 	public static String[] add(String cad,String v[]){
 		System.out.println("==CREATE==");
 		String[] nuevo = new String[v.length+1];
